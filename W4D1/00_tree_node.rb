@@ -1,5 +1,3 @@
-require 'byebug'
-
 class PolyTreeNode
   attr_reader :parent, :value
   attr_accessor :children

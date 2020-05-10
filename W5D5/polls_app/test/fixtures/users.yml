@@ -1,0 +1,11 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id       :bigint           not null, primary key
+#  username :string
+#
+# Indexes
+#
+#  index_users_on_username  (username) UNIQUE
+#

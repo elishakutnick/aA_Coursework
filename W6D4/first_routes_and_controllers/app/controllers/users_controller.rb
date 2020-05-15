@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
     def index
-      users = User.all
+      if params[:query] 
+        users = User.where('username LIKE ?',"#{params[:query]}")
+      else
+        users = User.all
+      end
       render json: users
     end
 
@@ -21,7 +25,8 @@ class UsersController < ApplicationController
     def update
       user = User.find(params[:id])
       if user.update(user_params)
-        redirect_to "/users/#{user.id}"
+        # redirect_to "/users/#{user.id}"
+        redirect_to user_url(user.id)
       else
         render json: user.errors.full_messages, status: 422
       end
@@ -36,6 +41,6 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:username)
     end
 end

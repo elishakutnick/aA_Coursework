@@ -1,0 +1,16 @@
+<h1>
+Welcome! Sign back in!
+</h1>
+<form action="<%= session_url %>" method="POST">
+    <label>Username:
+        <input type="text" name="user[user_name]" value="<%= @user.user_name %>">
+    </label>
+    <br>
+    <br>
+    <label>Password:
+        <input type="text" name="user[password]" value="<%= @user.password %>">
+    </label>
+    <br>
+    <br>
+    <input type="submit" value="Sign in">
+</form>

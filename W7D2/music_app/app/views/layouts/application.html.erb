@@ -10,24 +10,24 @@
   </head>
 
   <body>
-  <% if !logged_in? %>
-  <a href="<%=new_user_url%>">Sign Up</a>
-  <a href="<%=new_session_url%>">Sign In</a>
+    <% if !logged_in? %>
+      <a href="<%=new_user_url%>">Sign Up</a>
+      <a href="<%=new_session_url%>">Sign In</a>
     <% else %>
-    <form action=<%= session_url %> method='post'>
-        <input
-          type="hidden"
-          name="_method"
-          value="delete">
-        <input
-          type="hidden"
-          name="authenticity_token"
-          value="<%= form_authenticity_token %>">
-        <input 
-          type="submit" value="Sign Out">
-    </form>
-
-  <% end %>
+      <form action=<%= session_url %> method='post'>
+          <input
+            type="hidden"
+            name="_method"
+            value="delete">
+          <input
+            type="hidden"
+            name="authenticity_token"
+            value="<%= form_authenticity_token %>">
+          <input 
+            type="submit" value="Sign Out">
+      </form>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,36 @@
+ul {
+  display: flex; 
+  padding: 0; 
+  flex-wrap: wrap;
+  width: 456px;
+  border: 3px solid grey; 
+}
+
+.box {
+    background: grey ;
+    height: 150px;
+    width: 150px;
+    list-style: none;
+    border: 1px solid black;
+    flex-wrap: wrap;
+}
+
+.box:hover {
+    background: yellow;
+}
+
+.x,.o {
+  background: white;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.x {
+  color: blue; 
+}
+
+.o {
+  color: red;
+}
